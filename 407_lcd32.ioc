@@ -2,6 +2,10 @@
 CAD.formats=
 CAD.pinconfig=
 CAD.provider=
+FSMC.AddressSetupTime1=2
+FSMC.BusTurnAroundDuration1=0
+FSMC.DataSetupTime1=8
+FSMC.IPParameters=AddressSetupTime1,DataSetupTime1,BusTurnAroundDuration1
 File.Version=6
 GPIO.groupedBy=Group By Peripherals
 KeepUserPlacement=false
