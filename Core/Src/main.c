@@ -27,6 +27,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
+#include "ili9341.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -106,7 +107,11 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   printf("Start\n");
+
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_4);
+  __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_4, 2000);
   HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
+  ili9341_Init();
   while (1)
   {
 	  HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
