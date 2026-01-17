@@ -111,7 +111,9 @@ int main(void)
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_4);
   __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_4, 2000);
   HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
-  ili9341_Init();
+  LCD_ILI9341_init();
+  uint32_t id = LCD_ILI9341_readID();
+  printf("lcd id= %08x\n",id);
   LCD_ClrScr(LCD_COLOR_RED);
   while (1)
   {
