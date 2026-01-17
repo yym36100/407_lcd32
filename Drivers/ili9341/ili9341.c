@@ -5,7 +5,7 @@ void ili9341_Init(void) {
 	LCD_IO_Init();
 
 	/* Configure LCD */
-	ili9341_WriteReg(0xCA);
+	ili9341_WriteReg(0xCB);
 	ili9341_WriteData(0xC3);
 	ili9341_WriteData(0x08);
 	ili9341_WriteData(0x50);
@@ -124,8 +124,9 @@ void ili9341_Init(void) {
 }
 
 uint16_t ili9341_ReadID(void) {
-	LCD_IO_Init();
-	return ((uint16_t) ili9341_ReadData(LCD_READ_ID4));
+	uint8_t data[4];
+	LCD_IO_WriteReg(LCD_READ_ID4);
+	ili9341_ReadData();
 }
 
 void ili9341_DisplayOn(void) {
@@ -145,6 +146,6 @@ void ili9341_WriteData(uint16_t RegValue) {
 	LCD_IO_WriteData(RegValue);
 }
 
-uint16_t ili9341_ReadData(uint16_t RegValue) {
-	return (LCD_IO_ReadData(RegValue));
+uint16_t ili9341_ReadData(void) {
+	return (LCD_IO_ReadData());
 }

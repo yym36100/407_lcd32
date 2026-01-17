@@ -122,14 +122,13 @@
 
 void ili9341_Init(void);
 uint16_t ili9341_ReadID(void);
+
 void ili9341_WriteReg(uint8_t LCD_Reg);
 void ili9341_WriteData(uint16_t RegValue);
-uint16_t ili9341_ReadData(uint16_t RegValue);
+uint16_t ili9341_ReadData(void);
+
 void ili9341_DisplayOn(void);
 void ili9341_DisplayOff(void);
-uint16_t ili9341_GetLcdPixelWidth(void);
-uint16_t ili9341_GetLcdPixelHeight(void);
-
 
 #ifdef __cplusplus
 }

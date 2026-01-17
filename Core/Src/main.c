@@ -112,6 +112,7 @@ int main(void)
   __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_4, 2000);
   HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
   ili9341_Init();
+  LCD_ClrScr(LCD_COLOR_RED);
   while (1)
   {
 	  HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
