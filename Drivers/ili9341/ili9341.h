@@ -449,7 +449,7 @@ typedef struct
 // FSMC_NE4 FSMC_A18
 #define LCD_BASE   ((uint32_t)0x60000000)
 #define LCD_REG    (*((volatile uint16_t *)(LCD_BASE)))           // A18 = 0
-#define LCD_RAM   (*((volatile uint16_t *)(LCD_BASE + (1<<18)))) // A18 = 1
+#define LCD_RAM   (*((volatile uint16_t *)(LCD_BASE + (1<<19)))) // A18 = 1
 
 #define swap(a,b) {u16 t=a;a=b;b=t;}
 //-------------------------------
